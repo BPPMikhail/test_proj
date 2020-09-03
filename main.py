@@ -28,6 +28,20 @@ class Game:
         if letter not in self.__game_word:
             self.__allowed_attempts -= 1
 
+    def get_used_letters(self):
+        """
+        The method displays sorted list of used letters.
+        :return: type:list; sorted list of used letters
+        """
+        return sorted(set(self.__player_word))
+
+    def get_visible_word(self):
+        """
+        The method displays current state of the game.
+        :return: type:list; list with hidden and guessed letters.
+        """
+        return list(letter if letter in self.__player_word else '_' for letter in self.__game_word)
+
     @property
     def allowed_attempts(self):
         return self.__allowed_attempts
