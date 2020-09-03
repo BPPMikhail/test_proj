@@ -70,5 +70,6 @@ while game.allowed_attempts != 0:
     print(f'You used {game.get_used_letters()} letters.')
 else:
     print('Sorry! You lose! You have no attempts left.')
+    print(f'The hidden word is {game.game_word}')
 
 print('Goodbye! See you soon!')
