@@ -53,3 +53,13 @@ class Game:
 difficult_games = int(input('Enter the number of available attempts: '))
 
 game = Game(difficult_games)
+
+game.get_random_word()
+
+while game.allowed_attempts != 0:
+    if game.get_visible_word() == game.game_word:
+        print('Congratulations! You are winner!')
+        break
+else:
+    print('Sorry! You lose! You have no attempts left.')
+print('Goodbye! See you soon!')
