@@ -64,6 +64,7 @@ while game.allowed_attempts != 0:
 
     if game.get_visible_word() == game.game_word:
         print('Congratulations! You are winner!')
+
         play_more = input('Do you want play more? (say "yes" to continue playing!): ')
         if play_more == 'yes':
             game.clear_player_word()
