@@ -46,6 +46,9 @@ class Game:
     def allowed_attempts(self):
         return self.__allowed_attempts
 
+    @property
+    def game_word(self):
+        return self.__game_word
 
 difficult_games = int(input('Enter the number of available attempts: '))
 
