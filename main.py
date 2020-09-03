@@ -42,6 +42,9 @@ class Game:
         """
         return list(letter if letter in self.__player_word else '_' for letter in self.__game_word)
 
+    def clear_player_word(self):
+        self.__player_word = []
+
     @property
     def allowed_attempts(self):
         return self.__allowed_attempts
@@ -61,7 +64,12 @@ while game.allowed_attempts != 0:
 
     if game.get_visible_word() == game.game_word:
         print('Congratulations! You are winner!')
-        break
+        play_more = input('Do you want play more? (say "yes" to continue playing!): ')
+        if play_more == 'yes':
+            game.clear_player_word()
+            game.get_random_word()
+        else:
+            break
 
     print(f'You should guess this word {game.get_visible_word()}.')
     print(f'You have remaining {game.allowed_attempts} attempts. ')
